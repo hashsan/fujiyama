@@ -55,6 +55,9 @@ function getkagikakko(str){
   return ary||[]
 }
 
+//////////////////////////
+//////////////////////////
+//////////////////////////
 function fujiyama(temp){
   const cr='\n'
   var html=temp.trim()
@@ -63,8 +66,13 @@ function fujiyama(temp){
   html=replace_kakko(html)
   //pu(html)
   //console.log('replace_kakko',html)  
+  //v3.0 replace_escape --- strings... ---
+  html=replace_escape(html) 
   return html     
 }
+//////////////////////////
+//////////////////////////
+//////////////////////////
 
 function replace_head(html){
   const cr='\n'
@@ -126,6 +134,42 @@ function makeatlink(d){
   html =`<a href="${url}">${name}</a>`
   //console.log(d,url,name)
   return html;
+}
+
+//v3.0 
+function replace_escape(temp){
+  var html = temp
+  const re_esc=/-{3,}((?:\s+.*?)*?(?:\s+.*?))-{3,}|-{3,}(.*?)-{3,}/g
+  const re_single = /-{3,}(.*?)-{3,}/
+  const re_cr=/\n/
+  if(!re_esc.test(html))return html
+  
+  temp.match(re_esc).forEach(d=>{    
+    if(re_cr.test(d)){
+      html=html.replace(d,escape_html(d))
+      return
+    }
+    var dd = d.match(re_single).at(1)
+    html=html.replace(d,escape_html(dd) )
+  })
+
+  return html
+}
+
+function escape_html (string) {
+  if(typeof string !== 'string') {
+    return string;
+  }
+  return string.replace(/[&'`"<>]/g, function(match) {
+    return {
+      '&': '&amp;',
+      "'": '&#x27;',
+      '`': '&#x60;',
+      '"': '&quot;',
+      '<': '&lt;',
+      '>': '&gt;',
+    }[match]
+  });
 }
 
 if(window) window.fujiyama = fujiyama
