@@ -61,13 +61,15 @@ function getkagikakko(str){
 function fujiyama(temp){
   const cr='\n'
   var html=temp.trim()
+  //v3.0 replace_escape --- strings... ---
+  //v3.1 escape is first
+  html=replace_escape(html) 
+ 
   html=replace_head(html)
   //console.log('replace_head',html)
   html=replace_kakko(html)
   //pu(html)
   //console.log('replace_kakko',html)  
-  //v3.0 replace_escape --- strings... ---
-  html=replace_escape(html) 
   return html     
 }
 //////////////////////////
