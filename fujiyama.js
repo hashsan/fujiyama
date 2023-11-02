@@ -1,3 +1,8 @@
+
+//v2.0 image check to simple
+function isimg(line){
+ return /\.(jpeg|jpg|png|bmp|gif|webp|avif)$/i.test(line)  
+}
 function isurl(line){
   const re=/^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?|^#.+\w/gi
   return re.test(line)
@@ -43,7 +48,6 @@ function iskaigyo(line){
   return line===''
 }
 
-
 function getkagikakko(str){
   var re=/「.+?」/g
   var ary= str.match(re)
@@ -74,7 +78,8 @@ function replace_head(html){
       //var url= d.slice(1)
       //return `<a href="${url}">${d}</a>`
     }
-    if(isurl(d)){
+      //v2.0
+    if(isimg(d)){
       //class para is margin
       return `<img class="para" src="${d}">`
     }
