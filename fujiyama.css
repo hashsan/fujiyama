@@ -4,7 +4,8 @@
 /*
 v1 create the fujiyama minimal theme. so <div class="pbox"> or box
 v2.0 background spray like
-v2.1 add >> p hn mark .pre >> text-align:justify;  
+v2.1 add >> p hn mark .pre >> text-align:justify;
+v3 add .code
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -66,4 +67,8 @@ a:hover{border-bottom:2px dotted;}
 .r{text-align:right;}
 .c{text-align:center;}
 
+.code{
+  word-break:break-all;
+  white-space:pre-wrap;
+}
 
