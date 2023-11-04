@@ -1,4 +1,4 @@
-![fujiyama.jpg]
+![](fujiyama.jpg)
 # fujiyama
 日本語パーサー「フジヤマ」のコンセプトは「自然な日本語の文章をそれなりの見た目のHTMLに」です。
 
