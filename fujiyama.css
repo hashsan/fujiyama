@@ -6,6 +6,7 @@ v1 create the fujiyama minimal theme. so <div class="pbox"> or box
 v2.0 background spray like
 v2.1 add >> p hn mark .pre >> text-align:justify;
 v3 add .code
+v4 bug first image = liner-gradiant size none!
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -25,6 +26,7 @@ html{
 }
 body{
   background:var(--background-1),var(--background-2);
+  background-size:100vw 100vh,auto auto; /* bug fix */  
 }
 .box{
   margin:auto;
