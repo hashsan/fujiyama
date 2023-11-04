@@ -1,5 +1,7 @@
 /*
 v1 fujiyama reborn
+v2.0 bugfix kaigyou <br>
+v2.1 bugfix img .para
 */
 
 function iscode(line){
@@ -116,7 +118,7 @@ function _walk(ary){
     }
 
     if(iskaigyo(line)){
-      return `<p><!--kaigyo--></p>`
+      return `<p><!--kaigyo--><br></p>`  //<br>
     }
 
     if(ishead(line)){
@@ -124,7 +126,7 @@ function _walk(ary){
     }
 
     if(isimg(line)){
-      return `<img src="${line}">`
+      return `<img class="para" src="${line}">` //para
     }
 
     if(islink(line)){
