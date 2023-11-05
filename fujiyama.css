@@ -9,6 +9,7 @@ v3 add .code
 v4 bug first image = liner-gradiant size none!
 v5 lost the a tag cursor pointer
 v6 input group good fit
+v7 contenteditable possible
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -88,3 +89,13 @@ option{
 a{
   cursor:pointer;
 }
+
+[contenteditable]{
+  outline:none;
+  padding:0.5rem;
+  box-sizing:border-box;
+  overflow-y:scroll;
+  padding-bottom:30vh;
+}
+
+
