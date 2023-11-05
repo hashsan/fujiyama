@@ -7,6 +7,8 @@ v2.0 background spray like
 v2.1 add >> p hn mark .pre >> text-align:justify;
 v3 add .code
 v4 bug first image = liner-gradiant size none!
+v5 lost the a tag cursor pointer
+v6 input group good fit
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -62,6 +64,7 @@ img{
   object-fit:cover;
   max-width:70%;
 }
+
 a{text-decoration:none;}
 a:hover{border-bottom:2px dotted;}
 
@@ -74,3 +77,14 @@ a:hover{border-bottom:2px dotted;}
   white-space:pre-wrap;
 }
 
+input{
+  width:20rem;
+}
+
+option{
+  min-width:20rem;
+}
+
+a{
+  cursor:pointer;
+}
