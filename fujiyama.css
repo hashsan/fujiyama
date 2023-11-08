@@ -11,6 +11,8 @@ v5 lost the a tag cursor pointer
 v6 input group good fit
 v7 contenteditable possible
 v8 why you contenteditable set on the scroll... bad
+v9 form reset and just designe
+v10 chrome scroll bar
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -164,4 +166,12 @@ form.pbox{
   padding-bottom:1.2rem;
 }
 
+/**/
+::-webkit-scrollbar {
+  width: 5px;
+  background-color:transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+}
 
