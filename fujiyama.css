@@ -14,6 +14,7 @@ v8 why you contenteditable set on the scroll... bad
 v9 form reset and just designe
 v10 chrome scroll bar
 v11 input underbar color change #677
+v12 scroll bar too white! > #efefef
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -170,7 +171,7 @@ form.pbox{
 /**/
 ::-webkit-scrollbar {
   width: 5px;
-  background-color:transparent;
+  background-color: #efefef; /*transparent;*/
 }
 ::-webkit-scrollbar-thumb {
   background: #444;
