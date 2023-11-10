@@ -15,13 +15,15 @@ v9 form reset and just designe
 v10 chrome scroll bar
 v11 input underbar color change #677
 v12 scroll bar too white! > #efefef
+v13 basebackground change 
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
 :root{
   --font-family:'M PLUS Rounded 1c', sans-serif;
   --background-1:linear-gradient(135deg,#fffa,#fffa);
-  --background-2:url('https://i.pinimg.com/564x/27/3f/73/273f73861223c022adaa3e0ae382e3dc.jpg');
+  /*--background-2:url('https://i.pinimg.com/564x/27/3f/73/273f73861223c022adaa3e0ae382e3dc.jpg');*/
+  --background-2:url('https://i.pinimg.com/564x/6e/de/e2/6edee2c677a8731dfa4c36f89bcaeb11.jpg); /*v13*/
 }
 
 html{
