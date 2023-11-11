@@ -16,6 +16,7 @@ v10 chrome scroll bar
 v11 input underbar color change #677
 v12 scroll bar too white! > #efefef
 v13 basebackground change 
+v14 future example a button :active
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -178,4 +179,13 @@ form.pbox{
 ::-webkit-scrollbar-thumb {
   background: #444;
 }
+
+/*v14*/
+button:active,
+a:active{
+  display:inline-block;
+  transform:translate3d(0px,2px,0);
+}
+
+
 
