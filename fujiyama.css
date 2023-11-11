@@ -17,6 +17,7 @@ v11 input underbar color change #677
 v12 scroll bar too white! > #efefef
 v13 basebackground change 
 v14 future example a button :active
+v15 a:active is nothing
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -180,9 +181,8 @@ form.pbox{
   background: #444;
 }
 
-/*v14*/
-button:active,
-a:active{
+/*v14 v15 a is nothing*/
+button:active{
   display:inline-block;
   transform:translate3d(0px,2px,0);
 }
