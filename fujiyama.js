@@ -2,6 +2,7 @@
 v1 fujiyama reborn
 v2.0 bugfix kaigyou <br>
 v2.1 bugfix img .para
+v3 bugfix kaigyou in .code
 */
 
 function iscode(line){
@@ -114,6 +115,10 @@ function _walk(ary){
     }
 
     if(iscoding()){
+      if(iskaigyo(line)){
+        //bug kaigyo erase
+        return `<p class="${cls}"><br></p>`  //<br>        
+      }
       return `<p class="${cls}">${escape(line)}</p>`
     }
 
