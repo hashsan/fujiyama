@@ -1,5 +1,6 @@
 /*
-画像をクリックすると背景に１００％投影。
+v1 画像をクリックすると背景に１００％投影。
+v2 dissmiss, back to the default.
 */
 ;(function imagefull(){
   const delay = 5*1000
@@ -10,6 +11,7 @@
   window.addEventListener('click',(e)=>{
     const el = e.target
     if(!isimg(el)){
+      style.innerHTML = '' //v2 back to the default.
       return
     }
     const css=`
