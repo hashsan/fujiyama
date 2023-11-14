@@ -1,27 +1,14 @@
 /*
 v1 画像をクリックすると背景に１００％投影。
 v2 dissmiss, back to the default.
+v3 no back
 */
 ;(function imagefull(){
-  const delay = 5*1000
-  const isimg =el=>/img/i.test(el.tagName)
+  
   const style =document.createElement('style')
-  
-  
+  document.body.append(style)    
   window.addEventListener('click',(e)=>{
-    const el = e.target
-    if(!isimg(el)){
-      style.innerHTML = '' //v2 back to the default.
-      return
-    }
-    const css=`
-    :root{
-     --background-2:url("${el.src}");
-    }
-    `
-    style.innerHTML = css;    
+    style.innerHTML = `:root{--background-2:url("${e.target.src}");}`
   })
   
-  
-  setTimeout(()=>document.head.append(style),delay)
 }());
