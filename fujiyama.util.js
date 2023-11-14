@@ -4,11 +4,24 @@ v2 dissmiss, back to the default.
 v3 no back
 */
 ;(function imagefull(){
-  
+  const delay = 5*1000
+  const isimg =el=>/img/i.test(el.tagName)
   const style =document.createElement('style')
-  document.body.append(style)    
+
+
   window.addEventListener('click',(e)=>{
-    style.innerHTML = `:root{--background-2:url("${e.target.src}");}`
+    const el = e.target
+    if(!isimg(el)){
+      return
+    }
+    const css=`
+    :root{
+     --background-2:url("${el.src}");
+    }
+    `
+    style.innerHTML = css;    
   })
-  
+
+
+  setTimeout(()=>document.head.append(style),delay)
 }());
