@@ -1,0 +1,49 @@
+/*
+with fujiyama.css
+*/
+/*
+#cits{
+  margin-left:4rem;
+}
+*/
+
+.frame{
+  position:relative;
+}
+.view,.edit{
+}
+.view{
+}
+.edit{
+  display:none;
+  position:fixed;
+  top:10vh;
+  right:1rem;
+  width:480px;
+  height:70vh;
+  max-height:70vh;
+  z-index:10;
+  overflow-y:scroll;
+  
+  border-radius: 0.25rem;
+  border:4px solid #eee;
+  border-right:unset;
+  
+}
+.frame:has(:checked) .edit{
+  display:block;
+}
+.btn{
+  position:absolute;
+  top:0;
+  right:-1rem;
+  cursor:pointer;
+  text-decoration:underline;
+  color:#00e;  
+}
+.btn>input{
+  display:none;
+}
+.btn:has(:checked){
+  color:inherit;
+}
