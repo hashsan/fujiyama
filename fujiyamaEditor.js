@@ -40,6 +40,35 @@ function make(id){
 }
 
 
+function textinfo(data){
+  const isimg=(line)=>{
+    const re= /\.(jpeg|jpg|png|bmp|gif|webp|avif)$/i
+    return re.test(line)
+  }
+  const islink=(line)=>{
+    const re=/^http/
+    return (re.test(line) && !isimg(line))
+  }
+  
+  var text = data||''
+  const ary = text.split('\n')
+
+  let imgs = ary.filter(isimg)
+  let links = ary.filter(islink)
+
+  let ret={
+    title:ary.at(0)||'',
+    len:text.length,
+    line:ary.length,
+    link:links.at(0)||'',
+    links,
+    img:imgs.at(0)||'',
+    imgs,
+  }
+  return ret
+}
+
+
 class ViewEditor{
   cls ='ViewEditor'
   id = fn.rkana(8)
@@ -68,8 +97,8 @@ class ViewEditor{
     this.press = new Press(this.ed)
      .press('ctrl+Enter',this.add.bind(this))
      .press('ctrl+Backspace',this.remove.bind(this))
-     .press('ctrl+v',this.update.bind(this),500)
-     .press('*',this.update.bind(this),500)    
+     .press('ctrl+v',this.update.bind(this),200)
+     .press('Enter',this.update.bind(this))    
         
   }
   add(){
@@ -91,7 +120,9 @@ class ViewEditor{
     this.frame.remove()
   }
   update(){
-    this.view.innerHTML = this.getData()    
+    const data = this.getData()
+    Object.assign ( this.ed.dataset, textinfo(data) )
+    this.view.innerHTML = data
   }
 }
 
@@ -106,7 +137,9 @@ export class fujiyamaEditor extends ViewEditor{
     fn.as2(new fujiyamaEditor('＃新規').frame,this.frame)
   }  
   update(){
-    this.view.innerHTML = fujiyama(this.getData())
+    const data = this.getData()
+    Object.assign ( this.ed.dataset, textinfo(data) )   
+    this.view.innerHTML = fujiyama(data)
     this.view.lastElementChild.scrollIntoView()
   }  
 }
