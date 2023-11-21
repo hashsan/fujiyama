@@ -138,8 +138,8 @@ export class fujiyamaEditor extends ViewEditor{
   }  
   update(){
     const data = this.getData()
+    this.view.innerHTML = fujiyama(data)   
     Object.assign ( this.ed.dataset, textinfo(data) )   
-    this.view.innerHTML = fujiyama(data)
     this.scroll();      
   }
  async scroll(){
