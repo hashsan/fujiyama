@@ -18,6 +18,7 @@ v12 scroll bar too white! > #efefef
 v13 basebackground change 
 v14 future example a button :active
 v15 a:active is nothing
+v16 scroll-behavior: smooth
 */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
@@ -36,6 +37,12 @@ html{
   word-break:break-all;
   line-height:1.6;  
 }
+
+/*v16*/
+html{
+ scroll-behavior: smooth;  
+}
+
 body{
   background:var(--background-1),var(--background-2);
   background-size:100vw 100vh,100% auto; /* bug fix */  
