@@ -140,8 +140,12 @@ export class fujiyamaEditor extends ViewEditor{
     const data = this.getData()
     Object.assign ( this.ed.dataset, textinfo(data) )   
     this.view.innerHTML = fujiyama(data)
-    this.view.lastElementChild.scrollIntoView()
-  }  
+    this.scroll();      
+  }
+ async scroll(){
+    await new Promise(sol => setTimeout(sol, 20));  
+    this.view.lastElementChild.scrollIntoView();
+ }
 }
 
 
