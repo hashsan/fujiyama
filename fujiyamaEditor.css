@@ -30,6 +30,15 @@ with fujiyama.css
   border-right:unset;
   
 }
+
+.edit:after{
+  content:attr(data-line);
+  display:block;
+  position:absolute;
+  right:0.5rem;
+}
+
+
 .frame:has(:checked) .edit{
   display:block;
 }
