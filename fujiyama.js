@@ -3,6 +3,7 @@ v1 fujiyama reborn
 v2.0 bugfix kaigyou <br>
 v2.1 bugfix img .para
 v3 bugfix kaigyou in .code
+v4 script done
 */
 
 function iscode(line){
@@ -40,6 +41,13 @@ function islinkRag(line){
   return re.test(line)
   
 }
+
+//v4
+function isscript(line){
+  return /^<script/.test(line)
+}
+
+
 function makeatlinkRag(line){
   const re=/(＠.*)([-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(?:\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?|#.+\w|#)/i
   
@@ -84,8 +92,44 @@ function escape(line){
   });
 }
 
+//v4
+function rhash(){
+  return Math.random().toString(36).slice(-8)
+}
 
-function fujiyama(temp){
+function scriptCapture(html,obj){
+  //obj is ref
+  const re_script=/<script[\s\S]*?>[\s\S]+?<\/script>/g
+
+  html = html.replace(re_script,(d)=>{  
+    const id = rhash()
+    const el = document.createElement('div')
+    el.innerHTML = d;
+    el.id = id    
+    obj[id] = el.children[0];
+    return `<script id="${id}"></script>`
+    //console.log(d)
+  })
+
+  return html
+}
+
+function scriptDone(obj,time){
+  const done=()=>{
+    Object.keys(obj).map(id=>{
+      document.querySelector('#'+id).replaceWith(obj[id]);
+      eval(';'+obj[id].innerHTML+';')
+    })    
+  }
+  setTimeout(done,time||200)
+}
+
+
+function fujiyama(temp,scriptdelay){
+
+  var obj = {}                   //v4
+  temp = scriptCapture(temp,obj) //v4
+  
   const br ='\n'  
   const ary = _lip(temp)
   //console.log(ary)
@@ -93,6 +137,9 @@ function fujiyama(temp){
   //console.log(tagary)
   const html = tagary.join(br)
   //console.log(html)
+
+  scriptDone(obj,scriptdelay)  //v4
+  
   return html
 }
 
@@ -144,10 +191,14 @@ function _walk(ary){
       return `<a href="${url}">${name}</a>`      
     }
     
-
     if(ismark(line)){
       const marked = makemark(line)
       return `<p>${marked}</p>`
+    }
+
+    //v4
+    if(isscript(line)){
+      return line
     }
 
     return `<p>${line}</p>`
