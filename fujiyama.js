@@ -99,12 +99,12 @@ function escape(line){
 ma.add(/-{3,}\n[\s\S]+?-{3,}\n/,(line)=>{
   const br = line.slice(-1)
   const str = escape( line.slice(0,-1) )
-  return `<p class="pre">${str}</p>${br}`
+  return `<p class="code">${str}</p>${br}`
 })
 
 ma.add(/-{3,}\n[\s\S]+?-{3,}$/,(line)=>{
   const str = escape( line )
-  return `<p class="pre">${str}</p>`  
+  return `<p class="code">${str}</p>`  
 })
 
 
