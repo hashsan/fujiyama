@@ -34,7 +34,7 @@ function islink(line){
 }
 */
 function islink(line){
-  var re=/^(＠.+)[（\(](.+)[)\）]/
+  const re=/^(＠.+)[（\(](.+)[)\）]/
   return re.test(line)
 }
 function islinkRag(line){
@@ -42,12 +42,11 @@ function islinkRag(line){
   return re.test(line)
   
 }
-
 //v4
 function isscript(line){
-  return /^<script/.test(line)
+  const re=/^<script/
+  return re.test(line)
 }
-
 
 function makeatlinkRag(line){
   const re=/(＠.*)([-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(?:\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?|#.+\w|#)/i
@@ -58,7 +57,6 @@ function makeatlinkRag(line){
   return {name,url}
 }
 
-
 function makeatlink(line){
   const re=/^(＠.+)[（\(](.+)[)\）]/
   const m = line.match(re)
@@ -68,13 +66,13 @@ function makeatlink(line){
   //const tag =`<a href="${url}">${name}</a>`
   //return tag
 }
+
 function makemark(line){
   const re=/(「.+?(?:？|！)」)/
   const ret = line.replace(re,"<mark>$1</mark>")
   return ret
   //return `<p>${line.replace(re,"<mark>$1</mark>")}</p>`
 }
-
 
 function escape(line){
   if(typeof line !== 'string') {
