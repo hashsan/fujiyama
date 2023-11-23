@@ -4,6 +4,7 @@ v2.0 bugfix kaigyou <br>
 v2.1 bugfix img .para
 v3 bugfix kaigyou in .code
 v4 script done
+v4.1 dom.id head do not number
 */
 
 function iscode(line){
@@ -94,7 +95,8 @@ function escape(line){
 
 //v4
 function rhash(){
-  return Math.random().toString(36).slice(-8)
+  //do not number v4.1
+  return  'i'+Math.random().toString(36).slice(-8)
 }
 
 function scriptCapture(html,obj){
