@@ -32,7 +32,7 @@ getData=()=>{
 }
 setData(data){
   const {edit} = this
-  edit.innerText =data||'＃新'
+  edit.innerHTML =data||'＃新'  //v1
 }
 setTitle(){
   const {edit} = this
