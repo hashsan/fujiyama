@@ -3,7 +3,7 @@ import "//hashsan.github.io/use/use.js"
 
 
 
-class fujiyamaEditor{
+export class fujiyamaEditor{
   id = fn.rkana(12)
   frame
   view
