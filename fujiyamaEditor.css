@@ -1,0 +1,12 @@
+/*
+with fujiyama.css
+*/
+.edit{
+  display:none;
+}
+.wrap:has(.edit.is-active) .view{
+  display:none;
+}
+.is-active{
+  display:block;
+}
