@@ -1,5 +1,6 @@
 /*
-speedup fujiyama
+v1 speedup fujiyama
+v2 trimStart
 */
 
 class Mattya{
@@ -26,7 +27,8 @@ class Mattya{
     const re = this.getRe()
     const ma = this.getMa()
     //console.log(re)
-    const html = temp.replace(re,(...args)=>{
+    
+    const html = temp.trimStart(/*v2*/).replace(re,(...args)=>{
       //console.log(args)
       const line = args.at(0)
       const ary = args.slice(1,-2)
