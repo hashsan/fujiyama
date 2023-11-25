@@ -26,8 +26,10 @@ body{
   max-width:var(--width);
   */
   color:var(--color);
+  /*
   display:flex;
   flex-direction:column;
+  */
 }
 
 .box{
