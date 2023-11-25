@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+:root{
+  --width:480px;
+  --body-bg:#000;
+  --frame-bg:#333d;
+  --border:4px solid #eee;
+  --padding:1rem;
+  --margin:1rem;
+  --border-radius:0.4rem;
+  --color:#eee;
+}
+
+html{
+  scroll-behavior:smooth;
+  font-size:16px;
+  font-family: 'DotGothic16', sans-serif;
+  line-height:1.6;
+}
+
+body{
+  background:var(--body-bg);
+  margin:auto;
+  /*
+  width:var(--width);
+  max-width:var(--width);
+  */
+  color:var(--color);
+  display:flex;
+  flex-direction:column;
+}
+
+.box{
+  width:var(--width);
+  background:var(--frame-bg);
+  color:var(--color);
+  border:var(--border);
+  padding:var(--padding);
+  box-sizing:border-box;
+  border-radius:var(--border-radius);
+  outline:none;
+  word-break:break-all;  
+  margin-bottom:var(--margin);
+}
+
+.pbox{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.box-s>*,
+.box>*{
+  margin:0;
+  padding:0;
+}
+
+img.box{
+  filter:grayscale(0.9);
+  object-fit:cover;
+  object-position:top center;
+  max-height:480px;
+}
+
+[contenteditable]{
+  white-space:pre-wrap;
+}
+
+.nav,nav{
+  display:flex;
+  flex-direction: column;  
+}
+
+a{
+  color:inherit;
+  cursor:pointer;
+  text-decoration:unset;
+}
+
+a:before{
+  content:'▶';
+  visibility:unset;
+  opacity:0.2;
+  padding-right:2px;
+}
+
+a:hover:before{
+  visibility:unset;
+  opacity:1.0;
+  animation: blink 1s steps(5, start) infinite;  
+}
+
+@keyframes blink{
+  to{visibility:hidden;}
+}
+
+h1,h2,h3,h4,h5,h6,mark{
+  font-size:1.6rem;
+  color:inherit;
+  background:unset;
+}
+
+img{
+  width:70%;
+  object-fit:contain;
+  filter:grayscale(0.9) brightness(0.7);
+  border-radius:var(--border-radius);
+}
+
+img:hover{
+  filter:unset;
+}
+
+.r{
+  text-align:right;
+}
+.c{
+  text-align:center;
+}
