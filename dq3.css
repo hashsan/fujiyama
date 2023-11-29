@@ -46,15 +46,21 @@ body{
 }
 
 .pbox{
+  width:var(--width);
+  max-width:var(--width);  
   margin-left:auto;
   margin-right:auto;
 }
-
+.pbox .box{
+  width:100%;
+}
+/*
 .box-s>*,
 .box>*{
   margin:0;
   padding:0;
 }
+*/
 
 img.box{
   filter:grayscale(0.9);
@@ -99,6 +105,9 @@ h1,h2,h3,h4,h5,h6,mark{
   font-size:1.6rem;
   color:inherit;
   background:unset;
+  
+  margin:0;
+  padding:0;  
 }
 
 img{
