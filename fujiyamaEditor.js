@@ -9,8 +9,10 @@ export class fujiyamaEditor{
   view
   edit
   active = 'is-active';
+  cls = 'frame'
 
-constructor(data){
+constructor(data,cls){
+  this.cls = cls || this.cls
   this.init(data)
 }
 
@@ -84,22 +86,24 @@ remove(){
 keycommand(e){
   if(e.ctrlKey && e.key === 'Enter'){
     this.add()
+    return;
   }
   if(e.ctrlKey && e.key === 'Backspace'){
     this.remove()
+    return;
   }
 }
 add(){
-  const {frame} = this
+  const {frame,cls} = this
   const data='＃新'
-  const ced = new fujiyamaEditor(data)
+  const ced = new fujiyamaEditor(data,cls)
   fn.as2(ced.frame,frame)
 
 }
 make(){
-  const {active,id} = this
+  const {active,id,cls} = this
   const temp=`
-    <div id="${id}" class="wrap">
+    <div id="${id}" class="wrap ${cls}">
       <div class="view ${active}"></div>
       <div class="edit" 
            contenteditable="plaintext-only">＃新</div>   
