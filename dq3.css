@@ -71,6 +71,7 @@ img.box{
 
 [contenteditable]{
   white-space:pre-wrap;
+  outline:none;
 }
 
 .nav,nav{
